@@ -1,7 +1,7 @@
 fedora_keepass_installer
 ========================
 
-Script to install KeePass 2 application in Fedora
+Script to install KeePass2 application in Fedora operating system
 
 Instructions:
 
