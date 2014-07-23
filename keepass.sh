@@ -13,17 +13,17 @@
 #       AUTHOR: Liudas Alisauskas, liudas@akmc.lt
 #      LICENCE: GPL v2
 #
-#      VERSION: 2.26-1
+#      VERSION: 2.27-1
 #      CREATED: 2014-03-28
-#     REVISION: 2014-05-17
+#     REVISION: 2014-07-23
 #===================================================================================
 
 # Settings
 #language='Lithuanian'		# Comment out and define language if you want you translations to be downloaded
-version='2.26'				# KeePass version
+version='2.27'				# KeePass version
 in_path='/opt'				# Define installation path UP TO folder 'keepass'. Better leave as it is
 
-dep=(wget unzip mono-core mono-winforms xdotool)	# Array of dependencies
+dep=(unzip mono-core mono-winforms xdotool)	# Array of dependencies
 
 clear
 echo "--> Cheking for dependencies: ${dep[@]}"
@@ -48,16 +48,16 @@ cd tmp
 echo
 echo "--> Downloading KeePass ${version} source file"
 echo
-wget http://sourceforge.net/projects/keepass/files/KeePass%202.x/${version}/KeePass-${version}.zip/download -O keepass.zip >/dev/null 2>&1 
+curl -s -L http://sourceforge.net/projects/keepass/files/KeePass%202.x/${version}/KeePass-${version}.zip/download > keepass.zip
 echo "--> Downloading KeePass icon"
 echo
-wget http://upload.wikimedia.org/wikipedia/commons/1/19/KeePass_icon.png -O keepass.png >/dev/null 2>&1
+curl -s http://upload.wikimedia.org/wikipedia/commons/1/19/KeePass_icon.png > keepass.png
 
 # Download translation for language if defined; else skip this step
 if [[ -n "${language}" ]]; then 
 echo "--> Downloading KeePass translation file for ${language} language"
 echo
-wget http://sourceforge.net/projects/keepass/files/Translations%202.x/${version}/KeePass-${version}-${language}.zip/download -O language.zip >/dev/null 2>&1
+curl -s -L http://sourceforge.net/projects/keepass/files/Translations%202.x/${version}/KeePass-${version}-${language}.zip/download > language.zip 
 fi
 
 unzip "*.zip" -d keepass >/dev/null 2>&1	# Extract files into keepass folder
