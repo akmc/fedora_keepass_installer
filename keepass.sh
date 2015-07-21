@@ -51,7 +51,7 @@ echo
 curl -s -L http://sourceforge.net/projects/keepass/files/KeePass%202.x/${version}/KeePass-${version}.zip/download > keepass.zip
 echo "--> Downloading KeePass icon"
 echo
-curl -s http://upload.wikimedia.org/wikipedia/commons/1/19/KeePass_icon.png > keepass.png
+curl -s https://upload.wikimedia.org/wikipedia/commons/1/19/KeePass_icon.png > keepass.png
 
 # Download translation for language if defined; else skip this step
 if [[ -n "${language}" ]]; then 
