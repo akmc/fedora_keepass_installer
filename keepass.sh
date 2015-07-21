@@ -13,9 +13,9 @@
 #       AUTHOR: Liudas Alisauskas, liudas@akmc.lt
 #      LICENCE: GPL v2
 #
-#      VERSION: 2.27-1
+#      VERSION: 2.29-1
 #      CREATED: 2014-03-28
-#     REVISION: 2014-07-23
+#     REVISION: 2015-07-21
 #===================================================================================
 
 # Settings
