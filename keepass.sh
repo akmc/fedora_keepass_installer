@@ -20,7 +20,7 @@
 
 # Settings
 #language='Lithuanian'		# Comment out and define language if you want you translations to be downloaded
-version='2.27'				# KeePass version
+version='2.29'				# KeePass version
 in_path='/opt'				# Define installation path UP TO folder 'keepass'. Better leave as it is
 
 dep=(unzip mono-core mono-winforms xdotool)	# Array of dependencies
@@ -34,7 +34,7 @@ sleep 1
 for dep_check in ${dep[@]}; do
 	if rpm -q ${dep_check} | grep -q not; then
 		echo Package "\"${dep_check}\" - missing... Installing:"
-		sudo yum install ${dep_check} -y >/dev/null 2>&1
+		sudo dnf install ${dep_check} -y >/dev/null 2>&1
 	else
 		echo Package "\"${dep_check}\" - OK"
 	fi
